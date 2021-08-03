@@ -142,11 +142,10 @@ variable "tag_key_contact" {
 
 locals {
   common_tags = {
-    parent_project = var.tag_parent_project
-    application    = var.tag_application
-    CostCenterID   = var.tag_cost_center
-    billing_ref    = var.tag_billing_ref
+    Parent_Project = var.tag_parent_project
+    Application    = var.tag_application
+    Cost_Center_ID = var.tag_cost_center
     environment    = var.environment
-    key_contact    = var.tag_key_contact
+    Key_Contact    = var.tag_key_contact
   }
 }
