@@ -36,11 +36,16 @@ resource "aws_wafv2_web_acl" "main" {
         managed_rule_group_statement {
           name        = rule.value.name
           vendor_name = "AWS"
-
-          dynamic "excluded_rule" {
+          dynamic "rule_action_override" {
             for_each = rule.value.excluded_rules
+            iterator = rao
             content {
-              name = excluded_rule.value
+              name = rao.value
+              action_to_use {
+                allow {
+
+                }
+              }
             }
           }
         }
